@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-SECRET_KEY = 'django-insecure-4*7ezap2$1ldrl3@6p#q(0e^iey!#yea#t+-pn)_sw&6#&e)7='
+SECRET_KEY = ''
 DEBUG = True
 ALLOWED_HOSTS = ['*']  # Для разработки разрешаем все хосты
 
