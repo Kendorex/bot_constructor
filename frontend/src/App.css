@@ -1,0 +1,1002 @@
+/* ========== BASE STYLES ========== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ========== LAYOUT COMPONENTS ========== */
+.bot-manager {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* ========== UTILITY CLASSES ========== */
+.alert {
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.alert.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group input,
+.input-field,
+.select-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  width: 105%;
+}
+
+.btn.primary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #1565c0;
+}
+
+.btn.success {
+  background-color: #388e3c;
+  color: white;
+}
+
+.btn.success:hover {
+  background-color: #2e7d32;
+}
+
+.btn.danger {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.btn.danger:hover {
+  background-color: #c62828;
+}
+
+.btn.disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #f44336;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 5px;
+}
+
+.delete-btn.small {
+  font-size: 14px;
+}
+
+/* ========== BOT GRID ========== */
+.bot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.bot-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.bot-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bot-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.status-badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.status-badge.active {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.inactive {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.bot-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ========== FLOW BUILDER ========== */
+.flow-builder {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+}
+
+.tab-btn.active {
+  border-bottom-color: #1976d2;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.flow-container {
+  flex: 1;
+  height: calc(100% - 40px);
+  border: 1px solid #ddd;
+  position: relative;
+  background: white;
+}
+
+/* ========== DATABASE TAB ========== */
+.database-tab {
+  padding: 15px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+.tables-section {
+  margin-bottom: 20px;
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.table-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  background: #fff;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.table-name {
+  font-weight: 500;
+}
+
+.columns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.column-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+}
+
+.column-type {
+  color: #888;
+  font-family: monospace;
+}
+
+.add-table-section {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.add-column-form {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.column-form-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ========== NODE STYLES ========== */
+.node {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+}
+
+.node-header {
+  padding: 8px 12px;
+  background: #1976d2;
+  color: white;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.node-content {
+  padding: 12px;
+}
+
+.node-content textarea,
+.node-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.node-content textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* Specific node types */
+.text-node {
+  padding: 10px;
+  border: 2px solid #555;
+}
+
+.text-node.selected {
+  border-color: #0066ff;
+}
+
+.startend-node {
+  padding: 15px 20px;
+  border-radius: 50px;
+  background: #ffcccb;
+  border: 2px solid #ff6b6b;
+}
+
+.start-node .node-header {
+  background: #388e3c;
+}
+
+.condition-node {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(45deg);
+  background: #cbe4ff;
+  border: 2px solid #6b8cff;
+  padding: 20px;
+  position: relative;
+}
+.react-flow__node {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.condition-node .node-header,
+.condition-node .node-content {
+  transform: rotate(-45deg);
+  width: 170px;
+  position: absolute;
+  left: -25px;
+  top: 40px;
+}
+
+.condition-node .node-header {
+  top: 20px;
+}
+
+.menu-node {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 250px;
+}
+
+.menu-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.menu-item-input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* ========== HANDLES & CONNECTIONS ========== */
+.node-handle {
+  width: 10px;
+  height: 10px;
+  background: #555;
+}
+
+.node-handle.true-handle {
+  background: #4CAF50;
+}
+
+.node-handle.false-handle {
+  background: #F44336;
+}
+
+.condition-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.handle-label {
+  position: absolute;
+  font-size: 10px;
+  color: #333;
+  transform: rotate(-45deg);
+}
+
+/* ========== WIDGET PALETTE ========== */
+.widget-palette {
+  width: 200px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-left: 1px solid #ddd;
+}
+
+.palette-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.palette-item {
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  cursor: grab;
+  border: 1px solid #ddd;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .bot-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .flow-builder {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .widget-palette {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  .tables-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== COMMAND SELECTOR ========== */
+.command-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.command-selector select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* ========== SAVE BUTTON ========== */
+.save-btn {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.save-btn.primary {
+  background: #1976d2;
+}
+
+.add-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.node {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.node.selected {
+  border: 2px solid #1976d2;
+}
+
+.node-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.text-node textarea {
+  min-height: 60px;
+  width: 100%;
+  padding: 5px;
+}
+
+.startend-node.start {
+  background: #e8f5e9;
+}
+
+.startend-node.end {
+  background: #ffebee;
+}
+
+.delete-btn {
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+  float: right;
+}
+
+
+/* database.css */
+.table-data-viewer {
+  margin-top: 20px;
+}
+
+.data-table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.actions button {
+  margin-right: 5px;
+  padding: 3px 8px;
+  font-size: 0.8em;
+}
+
+.add-row-form {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+
+.add-row-form .form-group {
+  margin-bottom: 10px;
+}
+
+.add-row-form label {
+  display: inline-block;
+  width: 120px;
+}
+
+.tabs {
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Основные стили */
+.bot-manager {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Карточки */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.input-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Сетка ботов */
+.bot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Карточка бота */
+.bot-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.bot-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Информация о боте */
+.bot-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bot-name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.status-badge {
+  font-size: 0.9em;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.status-badge.active {
+  background-color: #e6f7ee;
+  color: #0a8150;
+}
+
+.status-badge.inactive {
+  background-color: #fde8e8;
+  color: #c81e1e;
+}
+
+/* Кнопки действий */
+.bot-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* Список пользователей */
+.users-list {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.users-list h4 {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.users-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.users-list li {
+  padding: 5px 0;
+  font-size: 0.85em;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .bot-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bot-actions {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+/* Добавьте эти стили в ваш файл App.css */
+
+.back-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+/* Добавьте эти стили в ваш файл App.css */
+.header-with-back {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.back-button {
+  order: -1; /* Перемещает кнопку в начало flex-контейнера */
+}
+
+.back-button button {
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: -6ch;
+  width: 20%;
+}
+
+.back-button button:hover {
+  background-color: #1565c0;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.back-button button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.back-button svg {
+  transition: transform 0.2s ease;
+}
+
+.back-button button:hover svg {
+  transform: translateX(-2px);
+}
+
+/* Обновите стили заголовка для выравнивания */
+.bot-manager h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Стили для кнопок */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 6px;
+  margin: 4px;
+}
+
+.btn svg {
+  flex-shrink: 0;
+}
+
+/* Цвета кнопок */
+.btn.primary {
+  background-color: #4361ee;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #3a56d4;
+}
+
+.btn.success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn.success:hover {
+  background-color: #27ae60;
+}
+
+.btn.danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn.danger:hover {
+  background-color: #c0392b;
+}
+
+.btn.warning {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn.warning:hover {
+  background-color: #d35400;
+}
+
+.btn.info {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn.info:hover {
+  background-color: #2980b9;
+}
+
+.btn.back {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+.btn.back:hover {
+  background-color: #95a5a6;
+}
+
+.btn.disabled {
+  background-color: #bdc3c7;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+/* Спиннер для кнопок с загрузкой */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Адаптация кнопок для маленьких экранов */
+@media (max-width: 768px) {
+  .bot-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    margin: 4px 0;
+  }
+}
+
+.addbtn {
+  width: 30%;
+  min-width: 120px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.addbtn:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.addbtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addbtn:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.addbtn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.2) 50%);
+  background-size: 400%;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.addbtn:hover::after {
+  opacity: 1;
+  background-position: 100%;
+}
+
+.addbtn .spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
