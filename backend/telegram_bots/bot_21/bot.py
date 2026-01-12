@@ -31,7 +31,7 @@ from .bot_database import db
 MAX_RECURSION_DEPTH = 10
 
 # Bot and dispatcher initialization
-bot = Bot(token='8037089418:AAGqD-aLqLUvVDZN_wcz66CZoiK1PZZPxro')
+bot = Bot(token='...')
 dp = Dispatcher()
 
 # Scheduler for broadcasts
